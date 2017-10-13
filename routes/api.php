@@ -30,3 +30,4 @@ Route::resource('Transactions', 'Transaction\TransactionController', ['only' => 
 
 //Users route
 Route::resource('Users', 'User\UserController', ['except' => ['create', 'edit']]);
+
