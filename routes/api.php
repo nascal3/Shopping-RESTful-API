@@ -17,17 +17,17 @@ use Illuminate\Http\Request;
 Route::resource('buyers', 'Buyer\BuyerController', ['only' => ['index', 'show']]);
 
 //Categories route
-Route::resource('Categories', 'Category\CategoryController', ['except' => ['create', 'edit']]);
+Route::resource('categories', 'Category\CategoryController', ['except' => ['create', 'edit']]);
 
 //Products route
-Route::resource('Products', 'Product\ProductController', ['only' => ['index', 'show']]);
+Route::resource('products', 'Product\ProductController', ['only' => ['index', 'show']]);
 
 //Sellers route
-Route::resource('Sellers', 'Seller\SellerController', ['only' => ['index', 'show']]);
+Route::resource('sellers', 'Seller\SellerController', ['only' => ['index', 'show']]);
 
 //Transactions route
-Route::resource('Transactions', 'Transaction\TransactionController', ['only' => ['index', 'show']]);
+Route::resource('transactions', 'Transaction\TransactionController', ['only' => ['index', 'show']]);
 
 //Users route
-Route::resource('Users', 'User\UserController', ['except' => ['create', 'edit']]);
+Route::resource('users', 'User\UserController', ['except' => ['create', 'edit']]);
 
