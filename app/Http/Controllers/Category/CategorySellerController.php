@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Category;
 use App\Category;
 use App\Http\Controllers\ApiController;
 
-class CategoryProductController extends ApiController
+class CategorySellerController extends ApiController
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,11 @@ class CategoryProductController extends ApiController
      */
     public function index(Category $category)
     {
-        $products = $category->products;
-        return $this->showAll($products);
+        $sellers = $category->products()->with('seller')
+            ->get()
+            ->pluck('seller')
+            ->unique('id')
+            ->values();
+        return $this->showAll($sellers);
     }
 }
